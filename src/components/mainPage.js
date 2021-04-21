@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const MainPage = () => {
   const [login, setLogin] = useState('');
-
+  const [password, setPassword] = useState('');
   const loginFunc = async (props) => {
     let authUser = {};
     try {
@@ -30,11 +30,12 @@ const MainPage = () => {
 
   const clickHandler = (event) => {
     event.preventDefault();
-    if (login === '') {
+    if (login === '' || password === '') {
       alert('Поля не должны быть пустыми...');
     } else {
       loginFunc(login);
       setLogin('');
+      setPassword('');
     }
   };
 
@@ -52,7 +53,13 @@ const MainPage = () => {
           type="text"
           placeholder="Email"
         />
-        <input className="input" type="password" placeholder="Password" />
+        <input
+          onChange={(event) => setPassword(event.target.value)}
+          className="input"
+          value={password}
+          type="password"
+          placeholder="Password"
+        />
         <p className="forgot">Забыли пароль?</p>
         <input type="submit" className="sign-in" value="Войти" />
         <div className="no-accaunt-wrap">
