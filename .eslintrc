@@ -3,6 +3,7 @@
         "wesbos"
     ],
     "rules": {
-        "no-unused-vars": 2
+        "no-unused-vars": 2,
+        "no-plusplus": 0
     }
 }
