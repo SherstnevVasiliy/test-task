@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './mainPage.css';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
+import ItemsCard from './itemsCard';
 
 const Catalog = () => {
   const [data, setData] = useState([]);
@@ -43,7 +45,9 @@ const Catalog = () => {
           </li>
         </ul>
         <div className="section-vitrina">
-          {data.map((elem) => elem.category)}
+          {data.map((itemCards) => (
+            <ItemsCard className="items-card" data={itemCards} key={uuidv4()} />
+          ))}
         </div>
       </section>
     </div>
