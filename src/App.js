@@ -5,7 +5,8 @@ import Catalog from './components/catalog';
 function App() {
   return (
     <>
-      <MainPage />;<Catalog />
+      <MainPage />
+      <Catalog />
     </>
   );
 }
