@@ -9,7 +9,7 @@ const MainPage = () => {
     let authUser = {};
     try {
       const response = await axios.get(
-        'http://jsonplaceholder.typicode.com/users'
+        'https://jsonplaceholder.typicode.com/users'
       );
       console.log(response.data);
       for (let i = 0; i < response.data.length; i++) {
