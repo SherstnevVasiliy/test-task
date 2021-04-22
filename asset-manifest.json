@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/test-tusk/static/css/main.dd865f1d.chunk.css",
-    "main.js": "/test-tusk/static/js/main.278c1eeb.chunk.js",
-    "main.js.map": "/test-tusk/static/js/main.278c1eeb.chunk.js.map",
+    "main.css": "/test-tusk/static/css/main.642a2799.chunk.css",
+    "main.js": "/test-tusk/static/js/main.768bb13e.chunk.js",
+    "main.js.map": "/test-tusk/static/js/main.768bb13e.chunk.js.map",
     "runtime-main.js": "/test-tusk/static/js/runtime-main.64e5c6b0.js",
     "runtime-main.js.map": "/test-tusk/static/js/runtime-main.64e5c6b0.js.map",
-    "static/js/2.635d99a3.chunk.js": "/test-tusk/static/js/2.635d99a3.chunk.js",
-    "static/js/2.635d99a3.chunk.js.map": "/test-tusk/static/js/2.635d99a3.chunk.js.map",
+    "static/js/2.33b3f2c8.chunk.js": "/test-tusk/static/js/2.33b3f2c8.chunk.js",
+    "static/js/2.33b3f2c8.chunk.js.map": "/test-tusk/static/js/2.33b3f2c8.chunk.js.map",
     "index.html": "/test-tusk/index.html",
-    "static/css/main.dd865f1d.chunk.css.map": "/test-tusk/static/css/main.dd865f1d.chunk.css.map",
-    "static/js/2.635d99a3.chunk.js.LICENSE.txt": "/test-tusk/static/js/2.635d99a3.chunk.js.LICENSE.txt",
+    "static/css/main.642a2799.chunk.css.map": "/test-tusk/static/css/main.642a2799.chunk.css.map",
+    "static/js/2.33b3f2c8.chunk.js.LICENSE.txt": "/test-tusk/static/js/2.33b3f2c8.chunk.js.LICENSE.txt",
     "static/media/mainPage.css": "/test-tusk/static/media/vk.44bc140e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.64e5c6b0.js",
-    "static/js/2.635d99a3.chunk.js",
-    "static/css/main.dd865f1d.chunk.css",
-    "static/js/main.278c1eeb.chunk.js"
+    "static/js/2.33b3f2c8.chunk.js",
+    "static/css/main.642a2799.chunk.css",
+    "static/js/main.768bb13e.chunk.js"
   ]
 }
