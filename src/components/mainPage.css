@@ -364,3 +364,9 @@ form {
 .nav-item-active > a {
   color: #ffffff;
 }
+
+@media (max-width: 1920px) {
+  .wrap {
+    width: 375px;
+  }
+}
