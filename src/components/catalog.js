@@ -3,20 +3,27 @@ import './mainPage.css';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import ItemsCard from './itemsCard';
+import NavItem from './navElement';
 
 const Catalog = () => {
   const [data, setData] = useState([]);
+  const [category, setCategory] = useState([]);
   useEffect(() => {
-    const loginFunc = async () => {
+    const getItem = async () => {
       try {
         const response = await axios.get('https://fakestoreapi.com/products');
         setData(response.data);
         console.log(response.data);
+        const catArr = response.data.slice();
+        console.log('data', catArr);
+        setCategory([...new Set(catArr.map((elem) => elem.category))]);
+        console.log(category);
       } catch (err) {
         alert(err);
       }
     };
-    loginFunc();
+    getItem();
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -48,6 +55,17 @@ const Catalog = () => {
           {data.map((itemCards) => (
             <ItemsCard className="items-card" data={itemCards} key={uuidv4()} />
           ))}
+        </div>
+      </section>
+      <section>
+        <div className="section-wrap">
+          <nav className="section-nav">
+            <ul>
+              {category.map((itemCards, index) => (
+                <NavItem data={itemCards} id={index} key={uuidv4()} />
+              ))}
+            </ul>
+          </nav>
         </div>
       </section>
     </div>

@@ -2,7 +2,7 @@
   "name": "test-work",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sherstnevvasiliy.github.io/test-tusk",
+  "homepage": "https://sherstnevvasiliy.github.io/test-task",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
