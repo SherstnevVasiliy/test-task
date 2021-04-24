@@ -16,6 +16,8 @@ const NavElement = (props) => {
     className = 'nav-item';
   }
   const handleClick = () => {
+    const categoryVitrinaLine = document.querySelector('.category-vitrina');
+    categoryVitrinaLine.style.left = `0px`;
     const navItem = document.querySelectorAll('.nav-item');
     console.log(navItem);
     console.log('click');

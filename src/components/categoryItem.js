@@ -6,6 +6,7 @@ const CategoryItem = (props) => {
     // eslint-disable-next-line react/prop-types
     data: { image, title },
   } = props;
+
   return (
     <div key={uuidv4()} className="category-item">
       <div className="card-category-body">

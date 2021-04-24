@@ -21,6 +21,7 @@ const Catalog = () => {
         const catArr = response.data.slice();
         console.log('data', catArr);
         setCategory([...new Set(catArr.map((elem) => elem.category))]);
+        localStorage.setItem('itemsCount', response.data.length);
         console.log(category);
       } catch (err) {
         alert(err);
@@ -55,10 +56,16 @@ const Catalog = () => {
             <a>Смотреть все</a>
           </li>
         </ul>
-        <div className="section-vitrina">
-          {data.map((itemCards) => (
-            <ItemsCard className="items-card" data={itemCards} key={uuidv4()} />
-          ))}
+        <div className="section-vitrina-line">
+          <div className="section-vitrina">
+            {data.map((itemCards) => (
+              <ItemsCard
+                className="items-card"
+                data={itemCards}
+                key={uuidv4()}
+              />
+            ))}
+          </div>
         </div>
       </section>
       <section>
@@ -70,18 +77,21 @@ const Catalog = () => {
               ))}
             </ul>
           </nav>
-          <div className="category-vitrina">
-            {data
-              .filter(
-                (itemCards) => itemCards.category === category[activeCategoryId]
-              )
-              .map((elem) => (
-                <CategoryItem
-                  className="items-card"
-                  data={elem}
-                  key={uuidv4()}
-                />
-              ))}
+          <div className="category-vitrina-line">
+            <div className="category-vitrina">
+              {data
+                .filter(
+                  (itemCards) =>
+                    itemCards.category === category[activeCategoryId]
+                )
+                .map((elem) => (
+                  <CategoryItem
+                    className="items-card"
+                    data={elem}
+                    key={uuidv4()}
+                  />
+                ))}
+            </div>
           </div>
         </div>
       </section>
