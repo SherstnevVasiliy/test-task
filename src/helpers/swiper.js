@@ -2,6 +2,9 @@
 const swiper = () => {
   let offset = 0;
   let offsetCategory = 0;
+  let xPos = null;
+  let yPos = null;
+
   const vitrinaLine = document.querySelector('.section-vitrina');
   const categoryVitrinaLine = document.querySelector('.category-vitrina');
 
@@ -22,10 +25,10 @@ const swiper = () => {
     handleTouchMoveCategory,
     false
   );
-  let xPos = null;
 
   function handleTouchStart(event) {
     xPos = event.touches[0].clientX;
+    yPos = event.touches[0].clientY;
   }
 
   function handleTouchMove(event) {
@@ -33,44 +36,59 @@ const swiper = () => {
       return false;
     }
     const newxPos = event.touches[0].clientX;
-
-    if (newxPos - xPos < 0) {
-      offset -= 252;
-      if (Math.abs(offset) > (localStorage.getItem('itemsCount') - 4) * 126) {
-        offset = -(localStorage.getItem('itemsCount') - 3) * 126;
+    const newyPos = event.touches[0].clientY;
+    const diffPosX = newxPos - xPos;
+    const diffPosY = newyPos - yPos;
+    if (Math.abs(diffPosY) < Math.abs(diffPosX)) {
+      if (diffPosX < 0) {
+        offset -= 252;
+        if (Math.abs(offset) > (localStorage.getItem('itemsCount') - 4) * 126) {
+          offset = -(localStorage.getItem('itemsCount') - 3) * 126;
+        }
+        vitrinaLine.style.left = `${offset}px`;
+      } else {
+        offset += 252;
+        if (offset > 0) {
+          offset = 0;
+        }
+        vitrinaLine.style.left = `${offset}px`;
       }
-      vitrinaLine.style.left = `${offset}px`;
-    } else {
-      offset += 252;
-      if (offset > 0) {
-        offset = 0;
-      }
-      vitrinaLine.style.left = `${offset}px`;
     }
     xPos = null;
   }
 
   function handleTouchMoveCategory(event) {
+    offsetCategory = Number(
+      categoryVitrinaLine.style.left.substring(
+        0,
+        categoryVitrinaLine.style.left.length - 2
+      )
+    );
+    console.log('left', offsetCategory);
     const vitrinaCount = document.querySelectorAll('.category-item');
     if (!xPos) {
       return false;
     }
     const newxPos = event.touches[0].clientX;
-
-    if (newxPos - xPos < 0) {
-      offsetCategory -= 341;
-      console.log(vitrinaCount.length);
-      if (Math.abs(offsetCategory) > (vitrinaCount.length - 1) * 341) {
-        offsetCategory = -(vitrinaCount.length - 1) * 341;
+    const newyPos = event.touches[0].clientY;
+    const diffPosX = newxPos - xPos;
+    const diffPosY = newyPos - yPos;
+    if (Math.abs(diffPosY) < Math.abs(diffPosX)) {
+      if (diffPosX < 0) {
+        offsetCategory -= 341;
+        console.log(vitrinaCount.length);
+        if (Math.abs(offsetCategory) > (vitrinaCount.length - 1) * 341) {
+          offsetCategory = -(vitrinaCount.length - 1) * 341;
+        }
+        console.log(offsetCategory);
+        categoryVitrinaLine.style.left = `${offsetCategory}px`;
+      } else {
+        offsetCategory += 341;
+        if (offsetCategory > 0) {
+          offsetCategory = 0;
+        }
+        categoryVitrinaLine.style.left = `${offsetCategory}px`;
       }
-      console.log(offsetCategory);
-      categoryVitrinaLine.style.left = `${offsetCategory}px`;
-    } else {
-      offsetCategory += 341;
-      if (offsetCategory > 0) {
-        offsetCategory = 0;
-      }
-      categoryVitrinaLine.style.left = `${offsetCategory}px`;
     }
     xPos = null;
   }
