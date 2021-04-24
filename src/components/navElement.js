@@ -19,10 +19,7 @@ const NavElement = (props) => {
     const categoryVitrinaLine = document.querySelector('.category-vitrina');
     categoryVitrinaLine.style.left = `0px`;
     const navItem = document.querySelectorAll('.nav-item');
-    console.log(navItem);
-    console.log('click');
     navItem.forEach((el) => {
-      console.log(el.classList);
       if (el.classList.contains('nav-item-active')) {
         el.classList.remove('nav-item-active');
       }

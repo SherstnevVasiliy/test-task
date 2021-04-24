@@ -17,12 +17,9 @@ const Catalog = () => {
       try {
         const response = await axios.get('https://fakestoreapi.com/products');
         setData(response.data);
-        console.log(response.data);
         const catArr = response.data.slice();
-        console.log('data', catArr);
         setCategory([...new Set(catArr.map((elem) => elem.category))]);
         localStorage.setItem('itemsCount', response.data.length);
-        console.log(category);
       } catch (err) {
         alert(err);
       }

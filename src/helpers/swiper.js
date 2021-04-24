@@ -31,6 +31,8 @@ const swiper = () => {
     yPos = event.touches[0].clientY;
   }
 
+  // Свайп общей витрины
+
   function handleTouchMove(event) {
     if (!xPos) {
       return false;
@@ -57,6 +59,8 @@ const swiper = () => {
     xPos = null;
   }
 
+  // Свайп деальной витрины товаров
+
   function handleTouchMoveCategory(event) {
     offsetCategory = Number(
       categoryVitrinaLine.style.left.substring(
@@ -64,7 +68,6 @@ const swiper = () => {
         categoryVitrinaLine.style.left.length - 2
       )
     );
-    console.log('left', offsetCategory);
     const vitrinaCount = document.querySelectorAll('.category-item');
     if (!xPos) {
       return false;
@@ -76,11 +79,9 @@ const swiper = () => {
     if (Math.abs(diffPosY) < Math.abs(diffPosX)) {
       if (diffPosX < 0) {
         offsetCategory -= 341;
-        console.log(vitrinaCount.length);
         if (Math.abs(offsetCategory) > (vitrinaCount.length - 1) * 341) {
           offsetCategory = -(vitrinaCount.length - 1) * 341;
         }
-        console.log(offsetCategory);
         categoryVitrinaLine.style.left = `${offsetCategory}px`;
       } else {
         offsetCategory += 341;

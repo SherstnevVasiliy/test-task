@@ -6,7 +6,6 @@ const ItemsCard = (props) => {
     // eslint-disable-next-line react/prop-types
     data: { image, title, price },
   } = props;
-  //   console.log('props', props);
   return (
     <div key={uuidv4()} className="card-item">
       <img alt="" className="img-card" src={image} />

@@ -7,7 +7,6 @@ const reducer = (state = initialState, action) => {
       return { ...state, isAuth: action.payload.isAuth };
 
     case 'CHANGE_CATEGORY':
-      console.log(action.payload.categiryId);
       newValue = action.payload.categiryId;
       return { ...state, activeCategoryId: newValue };
     default:

@@ -10,11 +10,9 @@ const MainPage = () => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const loginFunc = async (propsLogin, propsPassword) => {
-    console.log(propsLogin, propsPassword);
     let authUser = {};
     try {
       const response = await axios.get('https://fakestoreapi.com/users');
-      console.log(response.data);
       for (let i = 0; i < response.data.length; i++) {
         console.log(response.data[i].email, response.data[i].password);
         if (
@@ -28,9 +26,7 @@ const MainPage = () => {
           dispatch(authTrue('true'));
         }
       }
-      if (authUser.id) {
-        console.log(authUser);
-      } else {
+      if (!authUser.id) {
         alert('Пользователь не зарегистрирован');
       }
     } catch (err) {
