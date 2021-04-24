@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import './mainPage.css';
 import axios from 'axios';
@@ -8,25 +9,29 @@ const MainPage = () => {
   const dispatch = useDispatch();
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
-  const loginFunc = async (props) => {
+  const loginFunc = async (propsLogin, propsPassword) => {
+    console.log(propsLogin, propsPassword);
     let authUser = {};
     try {
-      const response = await axios.get(
-        'https://jsonplaceholder.typicode.com/users'
-      );
+      const response = await axios.get('https://fakestoreapi.com/users');
       console.log(response.data);
       for (let i = 0; i < response.data.length; i++) {
-        // eslint-disable-next-line react/prop-types
-        if (response.data[i].email.toLowerCase() === props.toLowerCase()) {
+        console.log(response.data[i].email, response.data[i].password);
+        if (
+          response.data[i].email === propsLogin &&
+          response.data[i].password === propsPassword
+        ) {
           authUser = response.data[i];
-          alert(`Welcome! ${authUser.name}`);
+          alert(
+            `Welcome! ${authUser.name.firstname} ${authUser.name.lastname}`
+          );
           dispatch(authTrue('true'));
         }
       }
       if (authUser.id) {
         console.log(authUser);
       } else {
-        alert('Auth FAIL');
+        alert('Пользователь не зарегистрирован');
       }
     } catch (err) {
       alert(err);
@@ -38,7 +43,7 @@ const MainPage = () => {
     if (login === '' || password === '') {
       alert('Поля не должны быть пустыми...');
     } else {
-      loginFunc(login);
+      loginFunc(login, password);
       setLogin('');
       setPassword('');
     }
@@ -55,7 +60,7 @@ const MainPage = () => {
           onChange={(event) => setLogin(event.target.value)}
           value={login}
           className="input"
-          type="text"
+          type="email"
           placeholder="Email"
         />
         <input

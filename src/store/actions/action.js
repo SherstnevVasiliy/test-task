@@ -1,7 +1,7 @@
-export const authTrue = () => ({
+export const authTrue = (props) => ({
   type: 'AUTH_TRUE',
   payload: {
-    isAuth: true,
+    isAuth: props,
   },
 });
 

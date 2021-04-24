@@ -1,5 +1,5 @@
 const initialState = {
-  isAuth: false,
+  isAuth: true,
   activProfile: false,
   activeCatalog: false,
   activeCategoryId: 0,

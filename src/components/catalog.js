@@ -2,12 +2,16 @@ import React, { useState, useEffect } from 'react';
 import './mainPage.css';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
+import { useSelector } from 'react-redux';
 import ItemsCard from './itemsCard';
 import NavItem from './navElement';
+import CategoryItem from './categoryItem';
 
 const Catalog = () => {
   const [data, setData] = useState([]);
   const [category, setCategory] = useState([]);
+  const activeCategoryId = useSelector((state) => state.activeCategoryId);
+
   useEffect(() => {
     const getItem = async () => {
       try {
@@ -66,6 +70,19 @@ const Catalog = () => {
               ))}
             </ul>
           </nav>
+          <div className="category-vitrina">
+            {data
+              .filter(
+                (itemCards) => itemCards.category === category[activeCategoryId]
+              )
+              .map((elem) => (
+                <CategoryItem
+                  className="items-card"
+                  data={elem}
+                  key={uuidv4()}
+                />
+              ))}
+          </div>
         </div>
       </section>
     </div>

@@ -4,7 +4,7 @@ const reducer = (state = initialState, action) => {
   let newValue;
   switch (action.type) {
     case 'AUTH_TRUE':
-      return { ...state, isAuth: true };
+      return { ...state, isAuth: action.payload.isAuth };
 
     case 'CHANGE_CATEGORY':
       console.log(action.payload.categiryId);
