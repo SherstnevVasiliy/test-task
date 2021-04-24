@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import './mainPage.css';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { authTrue } from '../store/actions/action';
 
 const MainPage = () => {
+  const dispatch = useDispatch();
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const loginFunc = async (props) => {
@@ -13,9 +16,11 @@ const MainPage = () => {
       );
       console.log(response.data);
       for (let i = 0; i < response.data.length; i++) {
-        if (response.data[i].email === props) {
+        // eslint-disable-next-line react/prop-types
+        if (response.data[i].email.toLowerCase() === props.toLowerCase()) {
           authUser = response.data[i];
           alert(`Welcome! ${authUser.name}`);
+          dispatch(authTrue('true'));
         }
       }
       if (authUser.id) {
