@@ -4,6 +4,8 @@ import MainPage from './components/mainPage';
 import Catalog from './components/catalog';
 import Account from './components/account';
 import TopHeader from './components/topHeader';
+import Footer from './components/footer';
+import HomeIndicator from './components/homeIndicator';
 
 function App() {
   const viewState = useSelector((state) => state);
@@ -12,6 +14,7 @@ function App() {
       <>
         <TopHeader />
         <MainPage />
+        <HomeIndicator />
       </>
     );
   }
@@ -20,6 +23,7 @@ function App() {
       <>
         <TopHeader />
         <Catalog />
+        <Footer />
       </>
     );
   }
@@ -27,6 +31,7 @@ function App() {
     <>
       <TopHeader />
       <Account />
+      <Footer />
     </>
   );
 }

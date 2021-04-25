@@ -23,9 +23,6 @@ const MainPage = () => {
           authUser = response.data[i];
           dispatch(changeUserInfo(authUser));
           dispatch(authTrue(true));
-          alert(
-            `Welcome! ${authUser.name.firstname} ${authUser.name.lastname}`
-          );
         }
       }
       if (!authUser.id) {

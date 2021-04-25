@@ -57,19 +57,69 @@ figure {
 .network {
   width: 17px;
   height: 11px;
-  background: #ffffff url(../assets/images/network.svg);
+  background: url(../assets/images/network.svg);
 }
 
 .wifi {
   width: 16px;
   height: 11px;
-  background: #ffffff url(../assets/images/wifi.svg);
+  background: url(../assets/images/wifi.svg);
 }
 
 .battary {
   width: 25px;
   height: 11px;
-  background: #ffffff url(../assets/images/battary.svg);
+  background: url(../assets/images/battary.svg);
+}
+
+/* FOOTER */
+
+.footer-wrap {
+  height: 86px;
+  padding: 0 34px;
+  margin: 15px 0;
+  background: #ffffff;
+  box-shadow: 0px -8px 32px rgba(70, 96, 135, 0.1);
+}
+
+.footer-icons > li > a {
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  padding-top: 15px;
+  margin-bottom: 38px;
+}
+
+.home-icon {
+  background: url(../assets/images/homeicon.svg);
+}
+
+.clock-icon {
+  background: url(../assets/images/clockicon.svg);
+}
+
+.phone-icon {
+  background: url(../assets/images/phoneicon.svg);
+}
+
+.profile-icon {
+  background: url(../assets/images/profileicon.svg);
+}
+
+.home-indicator {
+  margin: 0 auto;
+  width: 134px;
+  height: 5px;
+  background: #000000;
+  border-radius: 100px;
 }
 
 /* mainpage */
@@ -419,12 +469,6 @@ form {
   color: #ffffff;
 }
 
-@media (max-width: 1920px) {
-  .wrap {
-    width: 375px;
-  }
-}
-
 /* витрина по категориям */
 .category-vitrina-line {
   overflow: hidden;
@@ -568,4 +612,5 @@ form {
 
 .btn-sign-out {
   margin-top: 52px;
+  margin-bottom: 424px;
 }
