@@ -4,7 +4,6 @@ import './index.css';
 import { Provider } from 'react-redux';
 import App from './App';
 import store from './store/store';
-import swiper from './helpers/swiper';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -12,5 +11,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-
-swiper();

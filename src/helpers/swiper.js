@@ -1,10 +1,10 @@
 /* eslint-disable no-use-before-define */
-const swiper = () => {
+
+const Swiper = () => {
   let offset = 0;
   let offsetCategory = 0;
   let xPos = null;
   let yPos = null;
-
   const vitrinaLine = document.querySelector('.section-vitrina');
   const categoryVitrinaLine = document.querySelector('.category-vitrina');
 
@@ -95,4 +95,4 @@ const swiper = () => {
   }
 };
 
-export default swiper;
+export default Swiper;

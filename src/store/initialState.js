@@ -1,8 +1,8 @@
 const initialState = {
-  isAuth: true,
+  isAuth: false,
   activProfile: false,
-  activeCatalog: false,
   activeCategoryId: 0,
+  userInfo: {},
 };
 
 export default initialState;

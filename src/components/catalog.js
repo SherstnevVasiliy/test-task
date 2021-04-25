@@ -1,16 +1,26 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './mainPage.css';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
-import { useSelector } from 'react-redux';
+
 import ItemsCard from './itemsCard';
 import NavItem from './navElement';
 import CategoryItem from './categoryItem';
+import Swiper from '../helpers/swiper';
+import { profileView } from '../store/actions/action';
 
 const Catalog = () => {
+  const dispatch = useDispatch();
   const [data, setData] = useState([]);
   const [category, setCategory] = useState([]);
   const activeCategoryId = useSelector((state) => state.activeCategoryId);
+
+  const handleClick = () => {
+    dispatch(profileView(true));
+  };
 
   useEffect(() => {
     const getItem = async () => {
@@ -25,6 +35,7 @@ const Catalog = () => {
       }
     };
     getItem();
+    Swiper();
     // eslint-disable-next-line
   }, []);
 
@@ -35,7 +46,13 @@ const Catalog = () => {
           <img alt="" />
         </span>
         <p className="page-header-catalog">Каталог</p>
-        <figure className="smile-avatar" />
+        <figure onClick={handleClick}>
+          <img
+            alt=""
+            className="smile-avatar"
+            src="https://i.ibb.co/Kb1cCy5/avatar.jpg"
+          />
+        </figure>
       </div>
       <form className="search">
         <input

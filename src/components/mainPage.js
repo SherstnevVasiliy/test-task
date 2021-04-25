@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './mainPage.css';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { authTrue } from '../store/actions/action';
+import { authTrue, changeUserInfo } from '../store/actions/action';
 
 const MainPage = () => {
   const dispatch = useDispatch();
@@ -13,6 +13,7 @@ const MainPage = () => {
     let authUser = {};
     try {
       const response = await axios.get('https://fakestoreapi.com/users');
+      console.log(response.data[0]);
       for (let i = 0; i < response.data.length; i++) {
         console.log(response.data[i].email, response.data[i].password);
         if (
@@ -20,10 +21,11 @@ const MainPage = () => {
           response.data[i].password === propsPassword
         ) {
           authUser = response.data[i];
+          dispatch(changeUserInfo(authUser));
+          dispatch(authTrue(true));
           alert(
             `Welcome! ${authUser.name.firstname} ${authUser.name.lastname}`
           );
-          dispatch(authTrue('true'));
         }
       }
       if (!authUser.id) {
