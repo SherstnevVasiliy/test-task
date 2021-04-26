@@ -13,7 +13,6 @@ const MainPage = () => {
     let authUser = {};
     try {
       const response = await axios.get('https://fakestoreapi.com/users');
-      console.log(response.data[0]);
       for (let i = 0; i < response.data.length; i++) {
         console.log(response.data[i].email, response.data[i].password);
         if (
