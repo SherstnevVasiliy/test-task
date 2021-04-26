@@ -54,16 +54,16 @@ const MainPage = () => {
         <input
           onChange={(event) => setLogin(event.target.value)}
           value={login}
-          className="input"
+          className="input email"
           type="email"
           placeholder="Email"
         />
         <input
           onChange={(event) => setPassword(event.target.value)}
-          className="input"
+          className="input password"
           value={password}
           type="password"
-          placeholder="Password"
+          placeholder="Пароль"
         />
         <p className="forgot">Забыли пароль?</p>
         <input type="submit" className="sign-in" value="Войти" />

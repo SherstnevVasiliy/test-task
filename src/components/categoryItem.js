@@ -10,7 +10,7 @@ const CategoryItem = (props) => {
   return (
     <div key={uuidv4()} className="category-item">
       <div className="card-category-body">
-        <h5 className="card-category-title">{title}</h5>
+        <p className="card-category-title">{title}</p>
         <div className="detailed-wrap">
           <p className="detailed">Подробнее</p>
           <span className="detailed-arrow">

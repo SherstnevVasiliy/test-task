@@ -107,6 +107,11 @@ const Catalog = () => {
                 ))}
             </div>
           </div>
+          <div className="pagination">
+            <span className="pagination-long" />
+            <span className="pagination-short" />
+            <span className="pagination-short" />
+          </div>
         </div>
       </section>
     </div>

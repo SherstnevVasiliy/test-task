@@ -77,7 +77,6 @@ figure {
 .footer-wrap {
   height: 86px;
   padding: 0 34px;
-  margin: 15px 0;
   background: #ffffff;
   box-shadow: 0px -8px 32px rgba(70, 96, 135, 0.1);
 }
@@ -145,6 +144,7 @@ figure {
 .cantainer-reg {
   display: flex;
   flex-direction: column;
+  margin-bottom: 15px;
 }
 
 input,
@@ -175,7 +175,7 @@ h2 {
 
 .input,
 .input:focus {
-  width: 343px;
+  width: 297px;
   height: 62px;
   left: 0px;
   top: 95px;
@@ -188,7 +188,23 @@ h2 {
   font-size: 16px;
   line-height: 19px;
   color: #a1a4b2;
-  padding-left: 15px;
+  padding-left: 46px;
+}
+
+.email,
+.email:focus {
+  background-image: url(../assets/images/mail.svg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-position: 16px;
+}
+
+.password,
+.password:focus {
+  background-image: url(../assets/images/pass.svg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-position: 16px;
 }
 
 .forgot {
@@ -266,8 +282,8 @@ form {
   justify-content: space-between;
   width: 313px;
   align-self: center;
-  margin-top: 121px;
-  margin-bottom: 81px;
+  margin-top: 107px;
+  margin-bottom: 66px;
 }
 
 .media-google {
@@ -295,7 +311,7 @@ form {
   margin-left: 16px;
   margin-right: 16px;
   margin-top: 13px;
-  margin-bottom: 27px;
+  margin-bottom: 17px;
 }
 
 .page-header-arrow {
@@ -321,7 +337,7 @@ form {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px 15px;
+  padding: 0px 46px;
   height: 45px;
   width: 343px;
   background: #ffffff;
@@ -333,6 +349,10 @@ form {
   line-height: 20px;
   color: #a1a4b2;
   margin-left: 16px;
+  background-image: url(../assets/images/search.svg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-position: 16px;
 }
 
 .smile-avatar {
@@ -424,8 +444,8 @@ form {
 /* section 2 */
 
 .section-wrap {
-  margin-top: 33px;
-  height: 283px;
+  margin-top: 31px;
+  height: 250px;
   width: 375px;
   background: #f2f3f7;
   border-radius: 30px 30px 0px 0px;
@@ -485,7 +505,7 @@ form {
 
 .category-item {
   width: 326px;
-  height: 178px;
+  height: 138px;
   margin-right: 15px;
   background: #ffffff;
   border-radius: 10px;
@@ -516,6 +536,7 @@ form {
   font-feature-settings: "pnum" on, "lnum" on;
   color: #3f414e;
   overflow: hidden;
+  margin-bottom: 30px;
 }
 
 .detailed {
@@ -542,6 +563,30 @@ form {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.pagination {
+  width: 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 9px;
+}
+.pagination-long {
+  display: block;
+  width: 16px;
+  height: 6px;
+  background: #2f80ed;
+  border-radius: 15px;
+}
+
+.pagination-short {
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: #a1a4b2;
+  border-radius: 15px;
 }
 
 /* Account */
@@ -611,6 +656,6 @@ form {
 }
 
 .btn-sign-out {
-  margin-top: 52px;
+  margin-top: 45px;
   margin-bottom: 424px;
 }
